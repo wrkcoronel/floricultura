@@ -2,7 +2,7 @@
 
 Protótipo interativo de uma loja de flores online com painel de atendimento da equipe.
 
-Demonstração: https://floricultura-35d.pages.dev/
+Demonstração: https://ateliedeflores.pages.dev/
 
 ## Funcionalidades
 
@@ -57,5 +57,5 @@ Abra `http://127.0.0.1:4178/` e use **Painel da loja** para ver o atendimento.
 Publicado na Cloudflare Pages por envio direto:
 
 ```sh
-npx wrangler pages deploy . --project-name floricultura --branch main
+npx wrangler pages deploy . --project-name ateliedeflores --branch main
 ```
