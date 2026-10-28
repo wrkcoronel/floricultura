@@ -2,7 +2,7 @@
 
 Protótipo interativo de uma loja de flores online com painel de atendimento da equipe.
 
-Demonstração: https://floricultura.pages.dev/
+Demonstração: https://floricultura-35d.pages.dev/
 
 ## Funcionalidades
 
