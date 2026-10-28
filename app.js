@@ -8,8 +8,8 @@
   const localDate = offset => { const date = new Date(); date.setDate(date.getDate()+offset); return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`; };
   const products = [
     {id:'bouquet',name:'Flores do dia',category:'flores',categoryLabel:'Bouquets da estação',image:'assets/buque-principal.jpg',description:'Um mix de flores, embalagem kraft e cartão. Um jeito inteiro de dizer carinho.',badge:'O CARINHO DE TODO DIA',sizes:[{name:'Bouquet P',price:228},{name:'Bouquet M',price:320}],available:true},
-    {id:'personal',name:'Seu toque especial',category:'presentes',categoryLabel:'Presentes personalizados',image:'assets/caixa-presente.jpg',description:'Flores e uma embalagem com a sua intenção. Detalhes sob consulta.',badge:'DO SEU JEITO',sizes:[{name:'Composição personalizada',price:null}],available:true},
-    {id:'kit',name:'Flores & um brinde',category:'presentes',categoryLabel:'Composições especiais',image:'assets/kit-presente.jpg',description:'Uma inspiração para celebrar com flores e complementos escolhidos juntos.',badge:'PARA CELEBRAR',sizes:[{name:'Kit sob medida',price:null}],available:true},
+    {id:'personal',name:'Seu toque especial',category:'presentes',categoryLabel:'Presentes personalizados',image:'assets/caixa-presente.jpg',description:'Flores em caixa chapéu, com nome ou inicial na embalagem e cartão escrito à mão.',badge:'DO SEU JEITO',sizes:[{name:'Caixa P',price:189},{name:'Caixa M',price:269}],available:true},
+    {id:'kit',name:'Flores & um brinde',category:'presentes',categoryLabel:'Composições especiais',image:'assets/kit-presente.jpg',description:'Uma inspiração para celebrar com flores e complementos escolhidos juntos.',badge:'PARA CELEBRAR',sizes:[{name:'Kit Celebração',price:349},{name:'Kit Especial',price:459}],available:true},
     {id:'basic',name:'Pequenos gestos',category:'pequenos',categoryLabel:'Linha Basic',image:'assets/pequenos-gestos.jpg',description:'Flores em vidro reciclado, com a delicadeza dos pequenos detalhes.',badge:'DELICADEZA QUE FICA',sizes:[{name:'Basic One',price:95},{name:'Basic Two',price:155}],available:true}
   ];
   const stages = ['A confirmar','Em preparação','Pronto','Em entrega','Concluído','Cancelado'];
@@ -17,7 +17,7 @@
     {id:'DEMO-1042',buyer:'Marina (exemplo)',recipient:'Clara',phone:'Não informado · exemplo',productName:'Flores do dia',size:'Bouquet M',price:320,delivery:'Entrega',date:localDate(1),time:'Manhã · 9h às 12h',address:'Endereço fictício · Centro',preferences:'Tons claros. Evitar rosas vermelhas.',cardMessage:'Para deixar seu novo ciclo ainda mais bonito!',personalization:'Clara',occasion:'Aniversário',status:'A confirmar',reference:'Confirmar endereço antes da entrega.'},
     {id:'DEMO-1041',buyer:'Rafael (exemplo)',recipient:'Beatriz',phone:'Não informado · exemplo',productName:'Pequenos gestos',size:'Basic Two',price:155,delivery:'Retirada',date:localDate(0),time:'Tarde · 13h às 17h',address:'Retirada na loja',preferences:'Flores coloridas.',cardMessage:'Obrigado por estar sempre por perto.',personalization:'',occasion:'Agradecimento',status:'Em preparação'},
     {id:'DEMO-1040',buyer:'Camila (exemplo)',recipient:'Helena',phone:'Não informado · exemplo',productName:'Flores do dia',size:'Bouquet P',price:228,delivery:'Entrega',date:localDate(0),time:'Tarde · 13h às 17h',address:'Endereço fictício · Jardim das Flores',preferences:'Sem preferência.',cardMessage:'Um abraço em forma de flores.',personalization:'H',occasion:'Um carinho sem data',status:'Em entrega'},
-    {id:'DEMO-1039',buyer:'Lucas (exemplo)',recipient:'Sofia',phone:'Não informado · exemplo',productName:'Flores & um brinde',size:'Kit sob medida',price:null,delivery:'Retirada',date:localDate(0),time:'Manhã · 9h às 12h',address:'Retirada na loja',preferences:'Composição em tons de rosa.',cardMessage:'Que venham muitas conquistas!',personalization:'',occasion:'Outra ocasião',status:'Concluído'}
+    {id:'DEMO-1039',buyer:'Lucas (exemplo)',recipient:'Sofia',phone:'Não informado · exemplo',productName:'Flores & um brinde',size:'Kit Celebração',price:349,delivery:'Retirada',date:localDate(0),time:'Manhã · 9h às 12h',address:'Retirada na loja',preferences:'Composição em tons de rosa.',cardMessage:'Que venham muitas conquistas!',personalization:'',occasion:'Outra ocasião',status:'Concluído'}
   ];
   let filter = 'all', selectedProduct = products[0], selectedSize = 0, step = 1, lastOrder = null, simulatedCount = 0, toastTimer, activeDraft = false;
   const dialog = $('#order-dialog');
@@ -166,7 +166,7 @@
   $('#new-demo-order').addEventListener('click',()=>openStaffOrder());
   $('#my-order').addEventListener('click',()=>{if(activeDraft){dialog.showModal();$('#dialog-title').focus({preventScroll:true});}else if(lastOrder)showDetails(lastOrder.id,true);else openOrder('bouquet');});
 
-  const storageKey = 'floricultura-demo-v1';
+  const storageKey = 'floricultura-demo-v2';
   const teamOptions = ['Equipe da loja','Atendimento','Produção','Entrega'];
   const timeStamp = () => new Date().toISOString();
   const momentLabel = value => new Date(value).toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
