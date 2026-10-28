@@ -1,0 +1,26 @@
+# Credenciais e configurações locais
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+.wrangler/
+*.pem
+*.key
+
+# Arquivos gerados e dependências
+dist/
+build/
+node_modules/
+__pycache__/
+*.pyc
+*.zip
+*.log
+
+# Material de consulta fora do código do site
+referencias-destaques/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+desktop.ini
